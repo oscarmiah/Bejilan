@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0vsxd0ihnpew"]
+
+[ext_resource type="Script" uid="uid://ohlvq5up1j1f" path="res://scripts/base.gd" id="1_baglu"]
+[ext_resource type="Texture2D" uid="uid://0vk3y82we3sd" path="res://icon.svg" id="2_t45w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ip5"]
+size = Vector2(22.5, 36.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40w10"]
+size = Vector2(127, 163.375)
+
+[node name="base" type="StaticBody2D"]
+script = ExtResource("1_baglu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t45w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_h5ip5")
+
+[node name="enemyHitarea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitarea"]
+position = Vector2(-0.5, 17.3125)
+shape = SubResource("RectangleShape2D_40w10")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -55.0
+offset_top = -102.0
+offset_right = 56.0
+offset_bottom = -75.0

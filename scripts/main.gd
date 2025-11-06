@@ -38,7 +38,7 @@ func spawn_enemy():
 	# Make sure enemy is in correct group
 	enemy.add_to_group("enemies")
 	
-	enemy.max_health = 100
+	enemy.max_health = 600
 	enemy.health = 100
 	enemy.speed = 50
 	enemy.path_follow = new_path_follow
